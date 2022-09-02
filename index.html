@@ -17,7 +17,20 @@
 <body onload="reloadClock()">
     <div id="overlay" class="overlay"></div>
 
-    <div id="bulb" class="bulb bulb-off"></div>
+    <!-- <div id="bulb" class="bulb bulb-off"></div> -->
+    
+    <div class="lampara">
+        <div class="cable"></div>
+        <div class="embellecedor">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="bombeta" class="bombeta bombeta_off">
+            <div id="bombilla" class="bombilla bombilla_off"></div>
+        </div>
+    </div>
+
     <div class="reloj">
         <div class="inside">
             <div id="hour"></div>
@@ -31,7 +44,7 @@
         <div id="switch" class="switch switch-off" onclick="onOf(this)"></div>
     </div>
 
-    <audio id="audio">
+    <audio id="audio" onload="playSound()">
         <source src="sounds/tic-tac.mp3" type="audio/mp3">
     </audio>
 

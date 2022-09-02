@@ -1,44 +1,43 @@
 function reloadClock() {
-    let date = new Date();
-    let hour = date.getHours();
-    let min = date.getMinutes();
-    let sec = date.getSeconds();
+    playSound();
+    const date = new Date();
+    const hour = date.getHours();
+    const min = date.getMinutes();
+    const sec = date.getSeconds();
 
-    let segGrad = 270 + sec * 6;
-    let minGrad = 270 + min * 6;
-    let hourGrad;
-
-    if (hour > 12) {
-        hourGrad = 270 + (hour - 12) * 30 + (min / 2);
-    } else {
-        hourGrad = hour * 30 + (min / 2);
-    }
+    const segGrad = 270 + sec * 6;
+    const minGrad = 270 + min * 6;
+    const hourGrad = hour > 12 ? 270 + (hour - 12) * 30 + (min / 2) : hour * 30 + (min / 2);
 
     document.getElementById("seconds").style.transform = "rotate(" + segGrad + "deg) translate(47px)";
     document.getElementById("minutes").style.transform = "rotate(" + minGrad + "deg) translate(47px)";
     document.getElementById("hour").style.transform = "rotate(" + hourGrad + "deg) translate(30px)";
 
-    // Audio
-    let ticTac = document.getElementById("audio");
-    ticTac.play();
-
     setTimeout("reloadClock()", 1000);
 }
 
-function onOf() {
-    let light = document.getElementById("switch");
-    let bulb = document.getElementById("bulb");
-    let overlay = document.getElementById("overlay");
-    let switchWall = document.getElementById("switchWall");
+const playSound = () => {
+    let ticTac = document.getElementById("audio");
+    ticTac.play();
+}
 
-    if (light.className == "switch switch-off") {
+function onOf() {
+    const bombeta  = document.getElementById("bombeta");
+    const bombilla = document.getElementById("bombilla");
+    const overlay = document.getElementById("overlay");
+    const switchWall = document.getElementById("switchWall");
+    const light = document.getElementById("switch");
+
+    if (bombeta.className == "bombeta bombeta_off") {
         light.className = "switch switch-on";
-        bulb.className = "bulb bulb-on";
+        bombeta.className = "bombeta bombeta_on";
+        bombilla.className = "bombilla bombilla_on";
         overlay.className = "";
         switchWall.className = "switch-wall switch-wall-on";
     } else {
         light.className = "switch switch-off";
-        bulb.className = "bulb bulb-off";
+        bombeta.className = "bombeta bombeta_off";
+        bombilla.className = "bombilla bombilla_off";
         overlay.className = "overlay";
         switchWall.className = "switch-wall switch-wall-off";
     }

@@ -75,25 +75,10 @@ div#point {
     border-radius: 100%;
 }
 
-.bulb {
-    margin: 0 auto;
-    width: 150px;
-    height: 150px;;
-}
-
-.bulb-off {
-    background: url("../images/lamp-off.png");
-    background-size: cover;
-}
-
-.bulb-on {
-    background: url("../images/lamp-on.png");
-    background-size: cover;
-}
-
 .switch-wall {
     position: absolute;
-    right: 50px;
+    right: 18px;
+    bottom: 27px;
     padding: 5px;
     border: 1px solid black;
     z-index: 2;
@@ -121,5 +106,75 @@ div#point {
 .switch-on {
     background: url("../images/switch-on.png");
     background-size: cover;
+}
+
+
+.lampara {
+    position: relative;
+    height: 150px;
+}
+
+.cable {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 2.5px;
+    height: 120px;
+    background: black;
+}
+
+.lampara .bombeta {
+    position: absolute;
+    top: 119px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.bombeta_off {
+    background-image: linear-gradient(rgba(255, 255, 255, .2),rgba(255, 255, 255, .5),rgba(255, 255, 255, .2));
+    border: 1px solid rgba(255, 255, 255, .3)
+}
+
+.bombeta_on {
+    background-color: rgba(219, 255, 15, 0.5)
+}
+
+.lampara .bombilla {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.bombilla_on {
+    background: yellow;
+}
+
+.bombilla_off {
+    border: 2px solid rgba(255, 255, 255, .3)
+}
+
+.lampara .embellecedor {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 20px;
+}
+.lampara .embellecedor div {
+    background: black;
+    width: 20px;
+    height: 9px;
+    border-radius: 100%;
 }
 
